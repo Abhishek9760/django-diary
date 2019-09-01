@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+{% if object %}
+    <div class="row">
+        <!-- <div class="col-12 col-lg-2 mx-auto order-12 col-md-2">
+          <div class="alert alert-primary" role="alert">
+            <p class="lead">Here is your day__Stay Happy!<p><br>
+          </div>
+        </div> -->
+        <div class="col-12 col-lg-10 mx-auto order-6 col-auto">
+          <div class="alert alert-danger" role="alert">
+            <p class="lead">{{ object.your_day }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-2 order-1">
+          <div class="alert alert-primary" role="alert">
+              <p class="lead"><b>By {{ object.user }} on {{ object.timestamp }}</b></p>
+          </div>
+        </div>
+      </div>
+{% else %}
+      <div class="jumbotron">
+        <h1>Please write some days!</h1>
+      </div>
+          
+{% endif %}
+      
+{% endblock content %}
+
+
