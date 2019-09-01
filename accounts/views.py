@@ -11,7 +11,8 @@ def login_page(request):
     context = {
         "form": form
     }
-
+    next_ = request.GET.get('next')
+    next_post = request.POST.get('next')
     redirect_path = next_ or next_post or None
     if form.is_valid():
         print(form.cleaned_data)
