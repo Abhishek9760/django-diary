@@ -13,7 +13,7 @@ SECRET_KEY = '6aow@&3dofto&%0gr172qz8(be97z6@j$68)p$100kx17ev@xw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['diaryislife.herokuapp.com']
+ALLOWED_HOSTS = ['diaryislife.herokuapp.com']
 
 
 # Application definition
