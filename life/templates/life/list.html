@@ -1,14 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-      <div class="row">
+<div class="row">
         <div class="col">
-          <div class="alert alert-secondary" role="alert">
             {% for obj in object %}
-          			{{ forloop.counter }} --> <a href="{{ obj.get_absolute_url }}">{{ obj.timestamp|date:"d, D: M Y" }}</a><br>
+            <div class="alert alert-primary pb-4" role="alert">
+              <p class="lead d-inline">{{ forloop.counter }} --> <a href="{{ obj.get_absolute_url }}" class="lead mb-4">{{ obj.timestamp|date:"d, D: M Y" }}</a><div class="text-right float-right"><a href="{% url 'delete' pk=obj.pk %}" class="alert-link btn btn-danger mr-2">Delete</a><a href="{% url 'update' pk=obj.pk %}" class="alert-link btn btn-success">Edit</a></div></div>
+
+              {% empty %}
+              <div class="jumbotron">
+                <p class="lead text-center">No days found! Please make some days..<a href='{% url "home" %}' class="btn-link">here</a></p>
+              </div>
       			{% endfor %}
           </div>
         </div>
       </div>
-      </div>
+</div>
 {% endblock content %}

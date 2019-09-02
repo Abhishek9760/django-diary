@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="lead text-center">Delete {{ object.your_day|truncatewords:2 }}?</h1>
+    <form method="POST" class="form-control">
+    	{% csrf_token %}
+    	<input type="submit" value="Delete" class="btn btn-danger form-control mb-3">
+    	<a href='{% url "list" %}' class="btn btn-success form-control">Cancel</a>
+    </form>
+{% endblock content %}

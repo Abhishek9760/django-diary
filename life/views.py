@@ -1,10 +1,21 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import DetailView, ListView
+from django.urls import reverse_lazy
+from django.views.generic import DetailView, ListView, UpdateView, DeleteView
 from django.http import Http404
 
 from .models import DiaryModel
 from .forms import DiaryForm
 
+class DiaryUpdateView(UpdateView):
+	model = DiaryModel
+	fields = ('your_day',)
+	template_name = 'home.html'
+
+class DiaryDeleteView(DeleteView):
+	model = DiaryModel
+	success_url = reverse_lazy('list')
+	template_name = 'life/delete.html'
+	context_object_name = 'object'
 
 def home(request):
 	form = DiaryForm()
