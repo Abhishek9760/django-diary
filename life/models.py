@@ -11,7 +11,7 @@ class DiaryModel(models.Model):
 	timestamp = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		return str(self.timestamp.strftime('%d/%m/%Y'))
+		return str(self.user) + ' on ' + str(self.timestamp.strftime('%d/%m/%Y')) 
 
 	def get_absolute_url(self):
 		return reverse('detail', kwargs={'pk': self.pk})
