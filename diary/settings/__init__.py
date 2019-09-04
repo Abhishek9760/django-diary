@@ -1,7 +1,7 @@
 from .base import *
-from .production import *
+from .local import *
 try:
 	
-	from .local import *
+	from .production import *
 except:
 	pass
