@@ -1,5 +1,6 @@
 from .base import *
+from .local import *
 try:
-	from .local import *
+	from .production import *
 except:
 	pass
