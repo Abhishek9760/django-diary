@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 
 from life.views import home, DiaryDetailView, DiaryListView, DiaryUpdateView, DiaryDeleteView
 from accounts.views import login_page, register_page
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,6 +16,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('register/', register_page, name='register'),
     path('list/', DiaryListView.as_view(), name='list'),
+    path('verify_otp/', TemplateView.as_view(template_name='accounts/verify_otp.html'), name='otp'),
     path('day/<int:pk>', DiaryDetailView.as_view(), name='detail'),
     path('update/<int:pk>', DiaryUpdateView.as_view(), name='update'),
     path('delete/<int:pk>', DiaryDeleteView.as_view(), name='delete'),
