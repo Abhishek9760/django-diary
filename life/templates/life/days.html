@@ -5,13 +5,13 @@
         {% if object.adventure %}
             <div class="col-12 col-lg-2 mx-auto order-12 col-md-2">
             <div class="alert alert-dark" role="alert">
-                <p class="lead"><b>Your Adventure</b> : <br> {{ object.adventure }}<p><br>
+                <p class="lead"><b>Your Adventure</b> : <br> {{ object.adventure|safe|linebreaksbr }}<p><br>
             </div>
             </div>
         {% endif %}
         <div class="col-12 {% if object.adventure %}col-lg-8{% else %}col-lg-10{% endif %} mx-auto order-6 col-auto">
           <div class="alert alert-danger" role="alert">
-            <p class="lead"><b>Your day</b> : <br> {{ object.your_day }}</p>
+            <p class="lead"><b>Your day</b> : <br> {{ object.your_day|safe|linebreaksbr }}</p>
           </div>
         </div>
         <div class="col-12 col-lg-2 order-1">

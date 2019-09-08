@@ -4,10 +4,12 @@
     <html lang="en">
     <head>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+      <title>Diary|Life</title>  
       {% include 'base/css.html' %}
+      <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     </head>
-    <body>
+    <body class="loader">
       {% include 'base/navbar.html' with brand_name='Diary' %}
       <div class="container">
       {% block content %}{% endblock content %}

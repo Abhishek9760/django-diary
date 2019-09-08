@@ -8,7 +8,7 @@ from .forms import DiaryForm
 
 class DiaryUpdateView(UpdateView):
 	model = DiaryModel
-	fields = ('your_day', 'adventure')
+	form_class = DiaryForm
 	template_name = 'home.html'
 
 class DiaryDeleteView(DeleteView):

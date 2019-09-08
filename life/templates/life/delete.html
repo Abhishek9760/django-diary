@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="lead text-center">Are you sure delete "{{ object.your_day|truncatewords:2 }}" from {{ object.timestamp|date:"d, M" }}?</h1>
+    <h1 class="text-center">Are you sure delete <div><p class="small">{{ object.your_day|truncatewords:2|safe|lower }}</p></div> from {{ object.timestamp|date:"d, M" }}?</h1>
     <form method="POST" class="form-control">
     	{% csrf_token %}
     	<input type="submit" value="Delete" class="btn btn-danger form-control mb-3">
